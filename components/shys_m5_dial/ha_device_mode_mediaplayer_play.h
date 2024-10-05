@@ -164,7 +164,9 @@ namespace esphome
                             return;
                         }
                         
-                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId(), "BadeShow");
+                        ESP_LOGI("HA_API", "Source: ", "BadeShow");
+
+                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId());
 
                         this->player_state = state;
 
