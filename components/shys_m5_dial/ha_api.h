@@ -440,16 +440,18 @@ namespace esphome
 
                     resp_kv.key = "entity_id";
                     resp_kv.value = entity.c_str();
-                    resp.data.push_back(resp_kv);
+                    resp.target.push_back(resp_kv);
 
                     
                     resp_kv.key = "source";
                     resp_kv.value = source.c_str();
                     resp.data.push_back(resp_kv);
 
+                    ESP_LOGI("HA_API", "media player select source %s: %s", source.c_str(), entity.c_str());
+
                     esphome::api::global_api_server->send_homeassistant_service_call(resp);
 
-                    ESP_LOGI("HA_API", "play media %s on player: %s", content_id.c_str(), entity.c_str());
+                    ESP_LOGI("HA_API", "media player select source %s: %s", source.c_str(), entity.c_str());
                 }
 
                 void playMediaOnMediaPlayer(const std::string& entity, const std::string& content_id, const std::string& content_type){
@@ -460,7 +462,7 @@ namespace esphome
 
                     resp_kv.key = "entity_id";
                     resp_kv.value = entity.c_str();
-                    resp.data.push_back(resp_kv);
+                    resp.target.push_back(resp_kv);
 
                     
                     resp_kv.key = "media_content_id";
