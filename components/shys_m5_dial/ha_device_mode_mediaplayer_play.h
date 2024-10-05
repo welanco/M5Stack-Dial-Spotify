@@ -288,6 +288,7 @@ namespace esphome
 
                         } else if(x>minPlayX && x<maxPlayX){
                             M5Dial.Speaker.tone(5000, 20);
+                            haApi.selectSourceOnMediaPlayer(this->device.getEntityId(), "BadeShow");
                             haApi.playPauseMediaPlayer(this->device.getEntityId());
                             return true;
 
@@ -308,6 +309,7 @@ namespace esphome
 
                 bool onButton(M5DialDisplay& display, const char * clickType) override {
                     if (strcmp(clickType, BUTTON_SHORT)==0){
+                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId(), "BadeShow");
                         haApi.playPauseMediaPlayer(this->device.getEntityId());
                         return true;
                     }
