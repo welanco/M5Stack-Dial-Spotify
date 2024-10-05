@@ -84,7 +84,6 @@ namespace esphome
                         const std::string content_id   = this->mediaContents[this->getValue()]->content_id.c_str();
                         const std::string content_type = this->mediaContents[this->getValue()]->content_type.c_str();
 
-                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId(), "BadeShow");
                         haApi.playMediaOnMediaPlayer(this->device.getEntityId(), content_id, content_type);
                         
                         delay(300);

@@ -440,7 +440,7 @@ namespace esphome
 
                     resp_kv.key = "entity_id";
                     resp_kv.value = entity.c_str();
-                    resp.target.push_back(resp_kv);
+                    resp.data.push_back(resp_kv);
 
                     
                     resp_kv.key = "source";
@@ -462,7 +462,7 @@ namespace esphome
 
                     resp_kv.key = "entity_id";
                     resp_kv.value = entity.c_str();
-                    resp.target.push_back(resp_kv);
+                    resp.data.push_back(resp_kv);
 
                     
                     resp_kv.key = "media_content_id";
