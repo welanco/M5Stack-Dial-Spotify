@@ -166,8 +166,6 @@ namespace esphome
                         
                         ESP_LOGI("HA_API", "Source: ", "BadeShow");
 
-                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId());
-
                         this->player_state = state;
 
                         this->displayRefreshNeeded = true;
@@ -312,6 +310,7 @@ namespace esphome
 
                 bool onButton(M5DialDisplay& display, const char * clickType) override {
                     if (strcmp(clickType, BUTTON_SHORT)==0){
+                        haApi.selectSourceOnMediaPlayer(this->device.getEntityId());
                         haApi.playPauseMediaPlayer(this->device.getEntityId());
                         return true;
                     }
